@@ -1,0 +1,53 @@
+# Node.js dependencies
+FRONTEND/node_modules/
+
+# Output build directories
+FRONTEND/dist/
+FRONTEND/build/
+
+# Logs
+FRONTEND/npm-debug.log*
+FRONTEND/yarn-debug.log*
+FRONTEND/yarn-error.log*
+FRONTEND/pnpm-debug.log*
+
+# Editor directories and files
+FRONTEND/.env
+FRONTEND/.env.local
+FRONTEND/.env.development.local
+FRONTEND/.env.test.local
+FRONTEND/.env.production.local
+
+FRONTEND/.DS_Store
+FRONTEND/.vscode/
+FRONTEND/.idea/
+FRONTEND/*.sublime-workspace
+
+# Build tool cache
+FRONTEND/.cache/
+FRONTEND/.turbo/
+FRONTEND/.next/
+FRONTEND/.parcel-cache/
+FRONTEND/.eslintcache
+
+# TypeScript build outputs
+FRONTEND/**/*.tsbuildinfo
+
+# Coverage directories
+FRONTEND/coverage/
+
+# Production static files
+FRONTEND/public/assets/
+
+# Optional: Mac desktop services store files
+*.DS_Store
+
+# Optional: Windows thumbnail cache files
+Thumbs.db
+
+# Optional: Ignore package-lock/yarn.lock if using a different package manager
+# FRONTEND/package-lock.json
+# FRONTEND/yarn.lock
+
+# Misc: local logs or custom outputs
+FRONTEND/*.log
