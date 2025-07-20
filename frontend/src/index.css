@@ -1,121 +1,111 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* @import url('https://api.fontshare.com/v2/css?f[]=clash-display@600&display=swap'); */
+
+body {
+  font-family: 'Clash Display', sans-serif;
+}
+
 
 /* FilmFluence Design System - Dark Theme with Cinema-Inspired Colors */
 
 @layer base {
   :root {
-    /* Dark cinema-inspired background */
-    --background: 222 84% 4.9%;
-    --foreground: 210 40% 98%;
+  /* Neon Yellow on Black Theme */
+  --background: 0 0% 0%;                 /* Black */
+  --foreground: 61.6, 100%, 50%;             /* Neon Yellow */
 
-    /* Card system */
-    --card: 222 84% 6.9%;
-    --card-foreground: 210 40% 98%;
+  --card: 0 0% 10%;
+  --card-foreground: 60 100% 50%;
 
-    /* Popover system */
-    --popover: 222 84% 6.9%;
-    --popover-foreground: 210 40% 98%;
+  --popover: 0 0% 10%;
+  --popover-foreground: 60 100% 50%;
 
-    /* Primary - Instagram gradient inspired */
-    --primary: 315 100% 60%;
-    --primary-foreground: 210 40% 98%;
-    --primary-glow: 260 100% 70%;
+  --primary: 61.6, 100%, 50%;                /* Yellow */
+  --primary-foreground: 0 0% 0%;         /* Black Text on Yellow */
 
-    /* Secondary - Electric blue accent */
-    --secondary: 217 91% 60%;
-    --secondary-foreground: 210 40% 98%;
+  --primary-glow: 60 100% 60%;           /* Bright yellow glow */
 
-    /* Muted system */
-    --muted: 217 32% 17.5%;
-    --muted-foreground: 215 20% 65.1%;
+  --secondary: 60 100% 40%;
+  --secondary-foreground: 0 0% 0%;
 
-    /* Accent - Gold highlights */
-    --accent: 45 100% 60%;
-    --accent-foreground: 222 84% 4.9%;
+  --muted: 0 0% 20%;
+  --muted-foreground: 60 100% 50%;
 
-    /* Destructive */
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+  --accent: 60 100% 50%;
+  --accent-foreground: 0 0% 0%;
 
-    /* Borders and inputs */
-    --border: 217 32% 17.5%;
-    --input: 217 32% 17.5%;
-    --ring: 315 100% 60%;
+  --destructive: 0 100% 50%;
+  --destructive-foreground: 0 0% 100%;
 
-    /* Design system tokens */
-    --radius: 0.75rem;
+  --border: 60 100% 50%;
+  --input: 60 100% 50%;
+  --ring: 60 100% 50%;
 
-    /* Custom gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--primary)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(217 32% 12%));
-    --gradient-card: linear-gradient(135deg, hsl(var(--card)), hsl(217 32% 12%));
+  --radius: 0.75rem;
 
-    /* Shadows and effects */
-    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.3);
-    --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.2);
-    --shadow-card: 0 8px 32px hsl(var(--background) / 0.8);
+  --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+  --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--primary)));
+  --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(0 0% 15%));
+  --gradient-card: linear-gradient(135deg, hsl(var(--card)), hsl(0 0% 15%));
 
-    /* Animation transitions */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-spring: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --shadow-glow: 0 0 40px hsl(var(--primary) / 0.4);
+  --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.3);
+  --shadow-card: 0 8px 32px hsl(var(--background) / 0.8);
 
-    --sidebar-background: 0 0% 98%;
+  --transition-smooth: all 0.3s ease-in-out;
+  --transition-spring: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+  --sidebar-background: 0 0% 5%;
+  --sidebar-foreground: 60 100% 50%;
+  --sidebar-primary: 60 100% 50%;
+  --sidebar-primary-foreground: 0 0% 0%;
+  --sidebar-accent: 0 0% 15%;
+  --sidebar-accent-foreground: 60 100% 50%;
+  --sidebar-border: 60 100% 50%;
+  --sidebar-ring: 60 100% 50%;
+}
 
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+  --background: 0 0% 0%;
+  --foreground: 60 100% 50%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+  --card: 0 0% 10%;
+  --card-foreground: 60 100% 50%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+  --popover: 0 0% 10%;
+  --popover-foreground: 60 100% 50%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+  --primary: 60 100% 50%;
+  --primary-foreground: 0 0% 0%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+  --secondary: 60 100% 40%;
+  --secondary-foreground: 0 0% 0%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+  --muted: 0 0% 20%;
+  --muted-foreground: 60 100% 50%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+  --accent: 60 100% 50%;
+  --accent-foreground: 0 0% 0%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+  --destructive: 0 100% 50%;
+  --destructive-foreground: 0 0% 100%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
+  --border: 60 100% 50%;
+  --input: 60 100% 50%;
+  --ring: 60 100% 50%;
+  --sidebar-background: 0 0% 0%;
+  --sidebar-foreground: 60 100% 50%;
+  --sidebar-primary: 60 100% 50%;
+  --sidebar-primary-foreground: 0 0% 0%;
+  --sidebar-accent: 0 0% 15%;
+  --sidebar-accent-foreground: 60 100% 50%;
+  --sidebar-border: 60 100% 50%;
+  --sidebar-ring: 60 100% 50%;
+}
+
 }
 
 @layer base {

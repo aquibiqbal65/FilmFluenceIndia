@@ -6,9 +6,9 @@ import { FaYoutube, FaInstagram, FaHeart, FaComment } from "react-icons/fa";
 import { FcLike } from "react-icons/fc";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import hero1 from "../assets/hero-1.jpg";
-import hero2 from "../assets/hero-2.jpg";
-import hero3 from "../assets/hero-3.jpg";
+import hero1 from "../assets/hero-1.png";
+import hero2 from "../assets/hero-2.png";
+import hero3 from "../assets/hero-3.png";
 import scrollVideo from "../assets/ScrollVideo.mp4";
 
 const HeroSection = () => {
@@ -94,18 +94,18 @@ const HeroSection = () => {
             {/* Text Section */}
             <div className="w-full lg:w-2/3 xl:w-3/4">
               <div className="animate-slide-up">
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6">
+                <h1 className="text-4xl font-bold uppercase sm:text-5xl lg:text-6xl xl:text-8xl mb-6">
                   <span className="text-foreground">
                     {slides[currentSlide].title}
                   </span>
                   <br />
-                  <span className="text-gradient text-glow">
+                  <span className="text-gradient">
                     {slides[currentSlide].highlight}
                   </span>
                 </h1>
 
                 <p
-                  className="text-lg sm:text-xl lg:text-2xl text-muted-foreground mb-8 max-w-2xl animate-slide-up"
+                  className=" text-white text-lg sm:text-xl lg:text-2xl text-muted-foreground mb-8 max-w-2xl animate-slide-up"
                   style={{ animationDelay: "0.2s" }}
                 >
                   {slides[currentSlide].subtitle}
@@ -133,14 +133,14 @@ const HeroSection = () => {
                 >
                   <div className="flex items-center space-x-2">
                     <Star className="w-5 h-5 text-accent fill-current" />
-                    <span className="text-sm text-muted-foreground">
+                    <span className="text-white text-sm text-muted-foreground">
                       5.0 Rating
                     </span>
                   </div>
-                  <div className="text-sm text-muted-foreground">
+                  <div className="text-white text-sm text-muted-foreground">
                     500+ Successful Campaigns
                   </div>
-                  <div className="text-sm text-muted-foreground">
+                  <div className="text-white text-sm text-muted-foreground">
                     1M+ Reach Generated
                   </div>
                 </div>
