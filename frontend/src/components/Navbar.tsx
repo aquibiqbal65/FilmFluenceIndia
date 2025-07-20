@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Instagram } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import Logo from '../assets/Logo.png';
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X, Instagram } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Logo from "../assets/Logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,30 +11,32 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const heroHeight = 600; // 🔥 adjust this to your Hero section height in px
-      setScrolled(window.scrollY > heroHeight);
+      setScrolled(window.scrollY > 8);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navItems = [
-    { name: 'Who We Are', path: '/who-we-are' },
-    { name: 'Vision', path: '/vision' },
-    { name: 'Mission', path: '/mission' },
-    { name: 'Packages', path: '/packages' },
-    { name: 'Contact Us', path: '/contact' },
+    { name: "Who We Are", path: "/who-we-are" },
+    { name: "Vision", path: "/vision" },
+    { name: "Mission", path: "/mission" },
+    { name: "Packages", path: "/packages" },
   ];
 
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-black shadow-md' : 'bg-transparent'}`}>
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled ? "bg-black shadow-md" : "bg-transparent"
+      }`}
+    >
       <div className="max-w-7xl my-5 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center">
-            <img className='h-8' src={Logo} alt="Logo" />
+            <img className="sm:h-11 h-8" src={Logo} alt="Logo" />
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
@@ -42,29 +44,20 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 to={item.path}
-                className={`uppercase font-medium transition-smooth ${
+                className={`animated-underline uppercase font-medium transition-smooth ${
                   isActive(item.path)
-                    ? 'text-primary'
-                    : 'text-white hover:text-primary'
+                    ? "text-primary active"
+                    : "text-white hover:text-primary"
                 }`}
               >
                 {item.name}
               </Link>
             ))}
-          </div>
-
-          <div className="hidden md:flex items-center space-x-4">
-            <a
-              href="https://instagram.com/filmfluenceindia"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center space-x-2 text-muted-foreground hover:text-primary transition-smooth"
+            <Link
+              to={"/contact"}
+              className="bg-primary sm:inline-block hidden p-4 text-primary-foreground font-[550] rounded-xs transition-all duration-300 uppercase"
             >
-              <Instagram className="w-5 h-5 text-white" />
-              <span>@filmfluenceindia</span>
-            </a>
-            <Link to="/contact">
-              <Button className="btn-influencer">I'm An Influencer</Button>
+              <span className="animatedButton-underline">Contact Us</span>
             </Link>
           </div>
 
@@ -86,29 +79,15 @@ const Navbar = () => {
                 key={item.name}
                 to={item.path}
                 onClick={() => setIsOpen(false)}
-                className={`block py-2 font-medium transition-smooth ${
+                className={`animated-underline block py-2 font-medium transition-smooth ${
                   isActive(item.path)
-                    ? 'text-primary'
-                    : 'text-foreground hover:text-primary'
+                    ? "text-primary active"
+                    : "text-foreground hover:text-primary"
                 }`}
               >
                 {item.name}
               </Link>
             ))}
-            <div className="pt-4 space-y-3 border-t border-border/50">
-              <a
-                href="https://instagram.com/filmfluence"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center space-x-2 text-muted-foreground hover:text-primary transition-smooth"
-              >
-                <Instagram className="w-5 h-5" />
-                <span>@filmfluence</span>
-              </a>
-              <Link to="/contact" onClick={() => setIsOpen(false)}>
-                <Button className="btn-influencer w-full">I'm An Influencer</Button>
-              </Link>
-            </div>
           </div>
         </div>
       )}

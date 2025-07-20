@@ -7,104 +7,112 @@ body {
   font-family: 'Clash Display', sans-serif;
 }
 
+h1, h2, h3, h4, h5, h6, p{
+  cursor: default;;
+}
 
 /* FilmFluence Design System - Dark Theme with Cinema-Inspired Colors */
 
 @layer base {
   :root {
-  /* Neon Yellow on Black Theme */
-  --background: 0 0% 0%;                 /* Black */
-  --foreground: 61.6, 100%, 50%;             /* Neon Yellow */
+    /* Neon Yellow on Black Theme */
+    --background: 0 0% 0%;
+    /* Black */
+    --foreground: 61.6, 100%, 50%;
+    /* Neon Yellow */
 
-  --card: 0 0% 10%;
-  --card-foreground: 60 100% 50%;
+    --card: 0 0% 10%;
+    --card-foreground: 60 100% 50%;
 
-  --popover: 0 0% 10%;
-  --popover-foreground: 60 100% 50%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 60 100% 50%;
 
-  --primary: 61.6, 100%, 50%;                /* Yellow */
-  --primary-foreground: 0 0% 0%;         /* Black Text on Yellow */
+    --primary: 61.6, 100%, 50%;
+    /* Yellow */
+    --primary-foreground: 0 0% 0%;
+    /* Black Text on Yellow */
 
-  --primary-glow: 60 100% 60%;           /* Bright yellow glow */
+    --primary-glow: 60 100% 60%;
+    /* Bright yellow glow */
 
-  --secondary: 60 100% 40%;
-  --secondary-foreground: 0 0% 0%;
+    --secondary: 60 100% 40%;
+    --secondary-foreground: 0 0% 0%;
 
-  --muted: 0 0% 20%;
-  --muted-foreground: 60 100% 50%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 60 100% 50%;
 
-  --accent: 60 100% 50%;
-  --accent-foreground: 0 0% 0%;
+    --accent: 60 100% 50%;
+    --accent-foreground: 0 0% 0%;
 
-  --destructive: 0 100% 50%;
-  --destructive-foreground: 0 0% 100%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
 
-  --border: 60 100% 50%;
-  --input: 60 100% 50%;
-  --ring: 60 100% 50%;
+    --border: 60 100% 50%;
+    --input: 60 100% 50%;
+    --ring: 60 100% 50%;
 
-  --radius: 0.75rem;
+    --radius: 0.75rem;
 
-  --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-  --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--primary)));
-  --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(0 0% 15%));
-  --gradient-card: linear-gradient(135deg, hsl(var(--card)), hsl(0 0% 15%));
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--primary)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(0 0% 15%));
+    --gradient-card: linear-gradient(135deg, hsl(var(--card)), hsl(0 0% 15%));
 
-  --shadow-glow: 0 0 40px hsl(var(--primary) / 0.4);
-  --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.3);
-  --shadow-card: 0 8px 32px hsl(var(--background) / 0.8);
+    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.4);
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.3);
+    --shadow-card: 0 8px 32px hsl(var(--background) / 0.8);
 
-  --transition-smooth: all 0.3s ease-in-out;
-  --transition-spring: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-smooth: all 0.3s ease-in-out;
+    --transition-spring: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
-  --sidebar-background: 0 0% 5%;
-  --sidebar-foreground: 60 100% 50%;
-  --sidebar-primary: 60 100% 50%;
-  --sidebar-primary-foreground: 0 0% 0%;
-  --sidebar-accent: 0 0% 15%;
-  --sidebar-accent-foreground: 60 100% 50%;
-  --sidebar-border: 60 100% 50%;
-  --sidebar-ring: 60 100% 50%;
-}
+    --sidebar-background: 0 0% 5%;
+    --sidebar-foreground: 60 100% 50%;
+    --sidebar-primary: 60 100% 50%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 60 100% 50%;
+    --sidebar-border: 60 100% 50%;
+    --sidebar-ring: 60 100% 50%;
+  }
 
 
   .dark {
-  --background: 0 0% 0%;
-  --foreground: 60 100% 50%;
+    --background: 0 0% 0%;
+    --foreground: 60 100% 50%;
 
-  --card: 0 0% 10%;
-  --card-foreground: 60 100% 50%;
+    --card: 0 0% 10%;
+    --card-foreground: 60 100% 50%;
 
-  --popover: 0 0% 10%;
-  --popover-foreground: 60 100% 50%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 60 100% 50%;
 
-  --primary: 60 100% 50%;
-  --primary-foreground: 0 0% 0%;
+    --primary: 60 100% 50%;
+    --primary-foreground: 0 0% 0%;
 
-  --secondary: 60 100% 40%;
-  --secondary-foreground: 0 0% 0%;
+    --secondary: 60 100% 40%;
+    --secondary-foreground: 0 0% 0%;
 
-  --muted: 0 0% 20%;
-  --muted-foreground: 60 100% 50%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 60 100% 50%;
 
-  --accent: 60 100% 50%;
-  --accent-foreground: 0 0% 0%;
+    --accent: 60 100% 50%;
+    --accent-foreground: 0 0% 0%;
 
-  --destructive: 0 100% 50%;
-  --destructive-foreground: 0 0% 100%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
 
-  --border: 60 100% 50%;
-  --input: 60 100% 50%;
-  --ring: 60 100% 50%;
-  --sidebar-background: 0 0% 0%;
-  --sidebar-foreground: 60 100% 50%;
-  --sidebar-primary: 60 100% 50%;
-  --sidebar-primary-foreground: 0 0% 0%;
-  --sidebar-accent: 0 0% 15%;
-  --sidebar-accent-foreground: 60 100% 50%;
-  --sidebar-border: 60 100% 50%;
-  --sidebar-ring: 60 100% 50%;
-}
+    --border: 60 100% 50%;
+    --input: 60 100% 50%;
+    --ring: 60 100% 50%;
+    --sidebar-background: 0 0% 0%;
+    --sidebar-foreground: 60 100% 50%;
+    --sidebar-primary: 60 100% 50%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 60 100% 50%;
+    --sidebar-border: 60 100% 50%;
+    --sidebar-ring: 60 100% 50%;
+  }
 
 }
 
@@ -114,11 +122,13 @@ body {
   }
 
   body {
-    background-color: hsl(var(--background)); color: hsl(var(--foreground));
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
   }
 }
 
 @layer components {
+
   /* Hero button variants */
   .btn-hero {
     @apply bg-gradient-to-r from-primary to-primary-glow text-primary-foreground font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-glow transition-all duration-300 hover:scale-105;
@@ -164,52 +174,107 @@ body {
     right: 0;
     bottom: 0;
     background-image: radial-gradient(2px 2px at 20px 30px, hsl(var(--primary)/0.3), transparent),
-                      radial-gradient(2px 2px at 40px 70px, hsl(var(--secondary)/0.3), transparent),
-                      radial-gradient(1px 1px at 90px 40px, hsl(var(--accent)/0.3), transparent);
+      radial-gradient(2px 2px at 40px 70px, hsl(var(--secondary)/0.3), transparent),
+      radial-gradient(1px 1px at 90px 40px, hsl(var(--accent)/0.3), transparent);
     animation: float 20s linear infinite;
   }
 }
 
 @layer utilities {
+
   /* Custom animations */
   @keyframes gradient-shift {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
   }
 
   @keyframes float {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(180deg); }
+
+    0%,
+    100% {
+      transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+      transform: translateY(-20px) rotate(180deg);
+    }
   }
 
   @keyframes slide-up {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   @keyframes slide-left {
-    from { opacity: 0; transform: translateX(30px); }
-    to { opacity: 1; transform: translateX(0); }
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 
   @keyframes slide-right {
-    from { opacity: 0; transform: translateX(-30px); }
-    to { opacity: 1; transform: translateX(0); }
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 
   @keyframes fade-in {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
   }
 
   @keyframes scale-in {
-    from { opacity: 0; transform: scale(0.95); }
-    to { opacity: 1; transform: scale(1); }
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
   }
 
   @keyframes pulse-glow {
-    0%, 100% { box-shadow: 0 0 20px hsl(var(--primary)/0.3); }
-    50% { box-shadow: 0 0 40px hsl(var(--primary)/0.6); }
+
+    0%,
+    100% {
+      box-shadow: 0 0 20px hsl(var(--primary)/0.3);
+    }
+
+    50% {
+      box-shadow: 0 0 40px hsl(var(--primary)/0.6);
+    }
   }
 
   /* Animation classes */
@@ -245,4 +310,174 @@ body {
   .transition-spring {
     transition: var(--transition-spring);
   }
+
+  /* Animated underline effect: grows from left on hover, shrinks to right on mouseout */
+  .animated-underline {
+    position: relative;
+    display: inline-block;
+  }
+
+  .animated-underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    /* adjust for gap */
+    width: 100%;
+    height: 2px;
+    background: #f8ff00;
+    /* or your preferred primary color */
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform-origin 0s;
+  }
+
+  .animated-underline:hover::after,
+  .animated-underline:focus::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .animated-underline:not(:hover):not(:focus)::after {
+    transform-origin: right;
+  }
+
+  .animated-underline.active::after {
+    /* Show underline for active page */
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .animatedButton-underline {
+    position: relative;
+    display: inline-block;
+  }
+
+  .animatedButton-underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    /* adjust for gap */
+    width: 100%;
+    height: 2px;
+    background: #000000;
+    /* or your preferred primary color */
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform-origin 0s;
+  }
+
+  /* CHANGED: Target parent hover instead of span hover */
+  *:hover>.animatedButton-underline::after,
+  *:focus>.animatedButton-underline::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  *:not(:hover):not(:focus)>.animatedButton-underline::after {
+    transform-origin: right;
+  }
+
+  .animatedButton-underline.active::after {
+    /* Show underline for active page */
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  /* From Uiverse.io by cssbuttons-io */ 
+button {
+ position: relative;
+ display: inline-block;
+ cursor: pointer;
+ outline: none;
+ border: 0;
+ vertical-align: middle;
+ text-decoration: none;
+ background: transparent;
+ padding: 0;
+ font-size: inherit;
+ font-family: inherit;
+}
+
+button.learn-more {
+ width: 16rem; /* Increased from 12rem to accommodate longer text */
+ height: auto;
+ min-height: 3rem; /* Ensure consistent height */
+}
+
+button.learn-more .circle {
+ transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+ position: relative;
+ display: block;
+ margin: 0;
+ width: 3rem;
+ height: 3rem;
+ background: #f8ff00;
+ border-radius: 1.625rem;
+}
+
+button.learn-more .circle .icon {
+ transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+ position: absolute;
+ top: 0;
+ bottom: 0;
+ margin: auto;
+ background: #000;
+}
+
+button.learn-more .circle .icon.arrow {
+ transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+ left: 0.625rem;
+ width: 1.125rem;
+ height: 0.125rem;
+ background: none;
+}
+
+button.learn-more .circle .icon.arrow::before {
+ position: absolute;
+ content: "";
+ top: -0.29rem;
+ right: 0.0625rem;
+ width: 0.625rem;
+ height: 0.625rem;
+ border-top: 0.125rem solid #000;
+ border-right: 0.125rem solid #000;
+ transform: rotate(45deg);
+}
+
+button.learn-more .button-text {
+ transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ padding: 0.75rem 1rem 0.75rem 1.85rem; /* Added right padding */
+ margin: 0;
+ color: #f8ff00;
+ font-weight: 700;
+ line-height: 1.6;
+ text-align: center;
+ text-transform: uppercase;
+ white-space: nowrap; /* Prevent text wrapping */
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+button:hover .circle {
+ width: 100%;
+}
+
+button:hover .circle .icon.arrow {
+ background: #000;
+ transform: translate(1rem, 0);
+}
+
+button:hover .button-text {
+ color: #000;
+}
+
+
 }
