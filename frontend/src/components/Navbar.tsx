@@ -19,10 +19,10 @@ const Navbar = () => {
   }, []);
 
   const navItems = [
-    { name: "Who We Are", path: "/who-we-are" },
-    { name: "Vision", path: "/vision" },
-    { name: "Mission", path: "/mission" },
-    { name: "Packages", path: "/packages" },
+    { name: "WHO WE ARE", path: "/who-we-are" },
+    { name: "HOW IT WORKS", path: "/vision" },
+    { name: "PACKAGES", path: "/packages" },
+    { name: "FAQs", path: "/mission" },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -44,7 +44,7 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 to={item.path}
-                className={`animated-underline uppercase font-medium transition-smooth ${
+                className={`animated-underline font-medium transition-smooth ${
                   isActive(item.path)
                     ? "text-primary active"
                     : "text-white hover:text-primary"

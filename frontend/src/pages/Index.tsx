@@ -6,7 +6,7 @@ import HowItWorksSection from "../components/HowItWorksSection";
 import TestimonialsSection from "../components/TestimonialsSection";
 import Footer from "../components/Footer";
 import SocialIcons from "@/components/ui/socialicons";
-
+import FAQSection from "../components/FAQsSection";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
@@ -22,6 +22,7 @@ const Index = () => {
       {/* <StatsSection />       */}
       <HowItWorksSection />
       <TestimonialsSection />
+      <FAQSection/>
       <Footer />
     </div>
   );
