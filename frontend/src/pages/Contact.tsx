@@ -5,6 +5,8 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Mail, Phone, MapPin, Instagram, Send, User, Building } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
 
 const Contact = () => {
   const { toast } = useToast();
@@ -34,12 +36,13 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-animated">
-      <div className="bg-floating-particles">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div className="min-h-screen">
+      <Navbar />
+      <div className="pt-20">
+        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           {/* Header */}
           <div className="text-center mb-16 animate-slide-up">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            <h1 className="text-4xl uppercase md:text-6xl font-bold mb-6">
               <span className="text-foreground">Let's Create </span>
               <span className="text-gradient">Together</span>
             </h1>
@@ -255,6 +258,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
