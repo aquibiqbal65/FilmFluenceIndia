@@ -1,17 +1,12 @@
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
-import { ChevronLeft, ChevronRight, Play, Star } from "lucide-react";
+import { Star } from "lucide-react";
 import { FaYoutube, FaInstagram, FaHeart, FaComment } from "react-icons/fa";
-import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { TypeAnimation } from "react-type-animation";
-import { motion } from "framer-motion";
 import hero3 from "../assets/hero-3.png";
 import scrollVideo from "../assets/ScrollVid.mp4";
 import FloatingHearts from "./ui/FloatingHearts";
-import FFButton from "./ui/FFButton";
-import SocialIcons from "./ui/socialicons";
-
 const HeroSection = () => {
   const { ref: commentsRef, inView: commentsInView } = useInView({
     triggerOnce: false,
@@ -51,7 +46,7 @@ const HeroSection = () => {
                     sequence={[
                       "Partnerships",
                       3000,
-                      "Engagement",
+                      "Engagements",
                       3000,
                       "Authenticity",
                       3000,

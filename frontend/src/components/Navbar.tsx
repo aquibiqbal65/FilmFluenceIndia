@@ -33,7 +33,7 @@ const Navbar = () => {
         scrolled ? "bg-black shadow-md" : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl my-5 mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-screen-2xl my-5 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center">
             <img className="sm:h-11 h-8" src={Logo} alt="Logo" />
