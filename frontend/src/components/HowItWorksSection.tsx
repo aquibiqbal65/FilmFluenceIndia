@@ -1,5 +1,8 @@
 import { CheckCircle, Search, VideoIcon, TrendingUp } from "lucide-react";
 import Background from "../assets/Backgrounds/howitworks.svg";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const HowItWorksSection = () => {
   const steps = [
@@ -15,6 +18,7 @@ const HowItWorksSection = () => {
         "Engagement metrics",
         "Style matching",
       ],
+      aos: "fade-left",
     },
     {
       icon: VideoIcon,
@@ -28,6 +32,7 @@ const HowItWorksSection = () => {
         "Production support",
         "Quality assurance",
       ],
+      aos: "fade-right",
     },
     {
       icon: TrendingUp,
@@ -41,48 +46,55 @@ const HowItWorksSection = () => {
         "Performance optimization",
         "Detailed analytics",
       ],
+      aos: "fade-left",
     },
   ];
 
+  useEffect(() => {
+    Aos.init({ duration: 500, easing: "ease-in-out" });
+  }, []);
+
   return (
-    <section 
-    style={{
-          backgroundImage: `url(${Background})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}>
-      <div
-        className="max-w-screen-2xl mx-auto py-32">
+    <section
+      style={{
+        backgroundImage: `url(${Background})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <div className="max-w-screen-2xl mx-auto py-32 overflow-x-hidden">
         <div className="px-4 sm:px-6 lg:px-8">
           {/* Header */}
-          <div className="text-center mb-16 uppercase animate-slide-up">
-            <h2 className="text-4xl md:text-8xl font-bold mb-6">
+          <div className="text-center mb-16 uppercase">
+            <h2 className="text-4xl md:text-8xl font-bold mb-6" data-aos="fade-up">
               <span className="text-foreground">How </span>
               <span className="text-gradient">FilmFluence</span>
               <span className="text-foreground"> Works</span>
             </h2>
-            <p className="text-xl text-white max-w-3xl mx-auto">
+            <p className="text-xl text-white max-w-3xl mx-auto" data-aos="fade" data-aos-duration="700">
               Our proven 3-step process transforms your brand vision into
               compelling influencer campaigns that drive real results and
               authentic engagement.
             </p>
           </div>
 
-          {/* Steps - content only, no visual, large steps full width, different alignment per step */}
+          {/* Steps */}
           <div className="space-y-16">
             {steps.map((step, index) => {
               const Icon = step.icon;
-              const alignment =
-                index === 1
-                  ? "lg:text-right lg:justify-end flex flex-col items-end"
-                  : "lg:text-left flex flex-col items-start";
+              const isSecond = index === 1;
               return (
                 <div
                   key={index}
-                  className={`w-full ${alignment} animate-slide-up`}
+                  className={`w-full flex flex-col ${
+                    isSecond
+                      ? "lg:items-end lg:text-right"
+                      : "lg:items-start lg:text-left"
+                  }`}
+                  data-aos={step.aos}
                 >
                   <div className="flex items-center space-x-4 mb-6">
-                    <div className="w-16 h-16 bg-accent  flex items-center justify-center text-black font-bold text-xl">
+                    <div className="w-16 h-16 bg-accent flex items-center justify-center text-black font-bold text-xl">
                       {step.step}
                     </div>
                     <Icon className="w-6 h-6 text-primary" />
@@ -94,11 +106,8 @@ const HowItWorksSection = () => {
                     {step.description}
                   </p>
                   <div className="grid grid-cols-2 gap-3 mb-8 max-w-lg">
-                    {step.details.map((detail, detailIndex) => (
-                      <div
-                        key={detailIndex}
-                        className="flex items-center space-x-2"
-                      >
+                    {step.details.map((detail, i) => (
+                      <div key={i} className="flex items-center space-x-2">
                         <CheckCircle className="w-4 h-4 text-accent" />
                         <span className="sm:text-xl text-base text-[#cecece]">
                           {detail}

@@ -4,9 +4,12 @@ import { Star } from "lucide-react";
 import { FaYoutube, FaInstagram, FaHeart, FaComment } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { TypeAnimation } from "react-type-animation";
+import Aos from "aos";
+import "aos/dist/aos.css";
 import hero3 from "../assets/hero-3.png";
 import scrollVideo from "../assets/ScrollVid.mp4";
 import FloatingHearts from "./ui/FloatingHearts";
+import { useEffect } from "react";
 const HeroSection = () => {
   const { ref: commentsRef, inView: commentsInView } = useInView({
     triggerOnce: false,
@@ -21,23 +24,25 @@ const HeroSection = () => {
   const subtitle =
     "Connect with top creators who bring your story to life through authentic, engaging content that converts.";
 
+  useEffect(() => {
+    Aos.init({ duration: 500, easing: "ease-in-out" });
+  }, []);
+
   return (
-    <section className="relative min-h-screen pt-40 sm:pt-24 pb-8 flex flex-col justify-center overflow-hidden bg-animated">
+    <section className="relative min-h-screen pt-40 sm:pt-24 pb-8 flex flex-col justify-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
         <img src={hero3} alt="Hero" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-background/70" />
       </div>
 
-      <div className="absolute inset-0 bg-floating-particles" />
-
       <div className="relative z-10 h-full flex items-center">
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="flex flex-col lg:flex-row items-center lg:items-start gap-2 lg:gap-12">
             {/* Text Section */}
             <div className="w-full lg:w-2/3 xl:w-3/4">
-              <div className="animate-slide-up">
-                <h1 className="mb-6">
+              <div className="">
+                <h1 className="mb-6" data-aos="fade-right">
                   <span className="text-foreground text-4xl font-bold uppercase sm:text-5xl lg:text-4xl xl:text-8xl">
                     {title}
                   </span>
@@ -62,14 +67,16 @@ const HeroSection = () => {
                 </h1>
 
                 <p
-                  className="text-white text-lg sm:text-xl lg:text-2xl text-muted-foreground mb-8 max-w-2xl animate-slide-up"
-                  style={{ animationDelay: "0.2s" }}
+                  className="text-white text-lg sm:text-xl lg:text-2xl text-muted-foreground mb-8 max-w-2xl"
+                  data-aos="fade-up"
+                  data-aos-duration="700"
                 >
                   {subtitle}
                 </p>
                 <div
-                  className="flex flex-col sm:flex-row gap-4 sm:gap-6 pt-12 animate-slide-up items-start sm:items-center"
-                  style={{ animationDelay: "0.4s" }}
+                  className="flex flex-col sm:flex-row gap-4 sm:gap-6 pt-12 items-start sm:items-center"
+                  data-aos="fade-up"
+                  data-aos-duration="900"
                 >
                   <div className="flex-shrink-0">
                     <Link to="/contact">
@@ -77,7 +84,9 @@ const HeroSection = () => {
                         <span className="circle" aria-hidden="true">
                           <span className="icon arrow"></span>
                         </span>
-                        <span className="button-text tracking-widest">Start Campaign</span>
+                        <span className="button-text tracking-widest">
+                          Start Campaign
+                        </span>
                       </button>
                     </Link>
                   </div>
@@ -85,8 +94,9 @@ const HeroSection = () => {
 
                 {/* Stats */}
                 <div
-                  className="mt-8 lg:mt-12 flex flex-wrap items-center gap-4 lg:gap-8 animate-fade-in"
-                  style={{ animationDelay: "0.6s" }}
+                  className="mt-8 lg:mt-12 flex flex-wrap items-center gap-4 lg:gap-8"
+                  data-aos="fade-up"
+                  data-aos-duration="1100"
                 >
                   <div className="flex items-center space-x-2">
                     <Star className="w-5 h-5 text-accent fill-current" />
@@ -109,7 +119,10 @@ const HeroSection = () => {
               <div className="relative">
                 {/* Social Icons */}
                 <div className="absolute -left-10 top-10 flex flex-col items-center space-y-4 z-20">
-                  <div className="bg-white rounded-full p-2 shadow-md">
+                  <div
+                    className="bg-white rounded-full p-2 shadow-md"
+                    data-aos="fade-left"
+                  >
                     <a
                       href="https://instagram.com/filmfluenceindia"
                       target="_blank"
@@ -118,8 +131,11 @@ const HeroSection = () => {
                       <FaInstagram className="text-pink-600 w-10 h-10" />
                     </a>
                   </div>
-                  <div className="bg-white rounded-full p-2 shadow-md">
-                    <FaYoutube className="text-black w-10 h-10" />
+                  <div
+                    className="bg-white rounded-full p-2 shadow-md"
+                    data-aos="fade-left"
+                  >
+                    <FaYoutube className="text-red-500 w-10 h-10" />
                   </div>
                 </div>
 
@@ -127,6 +143,7 @@ const HeroSection = () => {
                 <div
                   ref={commentsRef}
                   className="absolute -right-12 top-16 z-20"
+                  data-aos="fade-right"
                 >
                   <div className="bg-yellow-100 rounded-full px-3 py-1 text-black font-medium text-sm flex items-center gap-1 shadow">
                     <FaComment className="w-4 h-4" />
@@ -139,7 +156,10 @@ const HeroSection = () => {
                   ref={likesRef}
                   className="absolute -right-12 bottom-16 z-20"
                 >
-                  <div className="bg-indigo-500 rounded-full px-3 py-1 text-white font-medium text-sm flex items-center gap-1 shadow">
+                  <div
+                    className="bg-indigo-500 rounded-full px-3 py-1 text-white font-medium text-sm flex items-center gap-1 shadow"
+                    data-aos="fade-right"
+                  >
                     <FaHeart className="w-4 h-4" />
                     {likesInView && (
                       <CountUp end={4578} duration={2.5} separator="," />

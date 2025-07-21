@@ -159,25 +159,6 @@ h1, h2, h3, h4, h5, h6, p{
   .text-glow {
     @apply drop-shadow-[0_0_10px_hsl(var(--primary)/0.5)];
   }
-
-  /* Animated backgrounds */
-  .bg-animated {
-    background: var(--gradient-hero);
-    animation: gradient-shift 8s ease infinite;
-  }
-
-  .bg-floating-particles::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: radial-gradient(2px 2px at 20px 30px, hsl(var(--primary)/0.3), transparent),
-      radial-gradient(2px 2px at 40px 70px, hsl(var(--secondary)/0.3), transparent),
-      radial-gradient(1px 1px at 90px 40px, hsl(var(--accent)/0.3), transparent);
-    animation: float 20s linear infinite;
-  }
 }
 
 @layer utilities {
