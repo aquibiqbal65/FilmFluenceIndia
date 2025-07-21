@@ -1,105 +1,107 @@
-import { Link } from 'react-router-dom';
-import { Instagram, Mail, Phone, MapPin, Film } from 'lucide-react';
+import React from "react";
+import { Link } from "react-router-dom";
+import Logo from "../assets/Logo.png";
 
-const Footer = () => {
-  const currentYear = new Date().getFullYear();
-
+const Footer: React.FC = () => {
   return (
-    <footer className="bg-card border-t border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Brand */}
-          <div className="lg:col-span-2">
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-r from-primary to-primary-glow rounded-lg flex items-center justify-center">
-                <Film className="w-6 h-6 text-white" />
-              </div>
-              <span className="text-2xl font-bold text-gradient">FilmFluence</span>
-            </div>
-            
-            <p className="text-muted-foreground mb-6 max-w-md leading-relaxed">
-              Where cinema meets influence marketing. We create authentic, cinematic campaigns 
-              that transform how brands connect with their audiences through powerful storytelling.
-            </p>
-            
-            <div className="flex space-x-4">
-              <a
-                href="https://instagram.com/filmfluence"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 bg-gradient-to-r from-primary to-primary-glow rounded-full flex items-center justify-center hover:shadow-glow transition-smooth"
-              >
-                <Instagram className="w-5 h-5 text-white" />
-              </a>
-              <a
-                href="mailto:hello@filmfluence.com"
-                className="w-10 h-10 bg-gradient-to-r from-secondary to-primary rounded-full flex items-center justify-center hover:shadow-glow transition-smooth"
-              >
-                <Mail className="w-5 h-5 text-white" />
-              </a>
-            </div>
+    <footer className="bg-[#f8ff00] text-black py-14 px-6 relative overflow-hidden">
+      <div className="max-w-screen-2xl px-0 sm:px-12 mx-auto w-full flex flex-col sm:flex-row justify-between items-start gap-10 mb-10">
+        {/* Left side: Logo + intro */}
+        <div className="flex flex-col max-w-md">
+          <Link to="/" className="block mb-4 w-fit">
+            <img className="invert h-10 sm:h-11 w-auto" src={Logo} alt="Logo" />
+          </Link>
+          <p className="leading-relaxed text-lg md:text-xl max-w-xs">
+            We're India's rising bridge between visionary brands and impactful
+            creators, curating collaborations that speak, engage, and convert.
+          </p>
+        </div>
+
+        {/* Right side: Connect, Socials, Links */}
+        <div className="grid grid-cols-1 sm:text-right sm:grid-cols-2 md:grid-cols-3 gap-10 w-full sm:max-w-3xl">
+          {/* Connect */}
+          <div>
+            <h2 className="font-bold uppercase sm:text-2xl text-xl mb-3">
+              Connect
+            </h2>
+            <a
+              href="mailto:info@MEJSA.webflow.io"
+              className="underline text-lg md:text-xl block mb-2"
+            >
+              info@MEJSA.webflow.io
+            </a>
+            <a
+              href="tel:+991234567890"
+              className="text-lg md:text-xl underline"
+            >
+              +99 12 3456 7890
+            </a>
           </div>
 
-          {/* Quick Links */}
+          {/* Socials */}
           <div>
-            <h3 className="text-lg font-semibold text-foreground mb-6">Quick Links</h3>
-            <ul className="space-y-3">
+            <h2 className="font-bold sm:text-2xl text-xl uppercase mb-3">
+              Socials
+            </h2>
+            <ul>
               <li>
-                <Link to="/who-we-are" className="text-muted-foreground hover:text-primary transition-smooth">
-                  Who We Are
-                </Link>
+                <a href="#" className="text-lg md:text-xl underline block mb-2">
+                  instagram
+                </a>
               </li>
               <li>
-                <Link to="/vision" className="text-muted-foreground hover:text-primary transition-smooth">
-                  Vision
-                </Link>
+                <a href="#" className="text-lg md:text-xl underline block mb-2">
+                  linkedin
+                </a>
               </li>
               <li>
-                <Link to="/mission" className="text-muted-foreground hover:text-primary transition-smooth">
-                  Mission
-                </Link>
+                <a href="#" className="text-lg md:text-xl underline block mb-2">
+                  facebook
+                </a>
               </li>
               <li>
-                <Link to="/packages" className="text-muted-foreground hover:text-primary transition-smooth">
-                  Packages
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="text-muted-foreground hover:text-primary transition-smooth">
-                  Contact Us
-                </Link>
+                <a href="#" className="text-lg md:text-xl underline block">
+                  X
+                </a>
               </li>
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Links */}
           <div>
-            <h3 className="text-lg font-semibold text-foreground mb-6">Get In Touch</h3>
-            <ul className="space-y-3">
-              <li className="flex items-center space-x-3 text-muted-foreground">
-                <Mail className="w-5 h-5 text-primary" />
-                <span>hello@filmfluence.com</span>
+            <h2 className="font-bold sm:text-2xl text-xl uppercase mb-3">
+              Links
+            </h2>
+            <ul>
+              <li>
+                <a href="#" className="text-lg md:text-xl underline block mb-2">
+                  style guide
+                </a>
               </li>
-              <li className="flex items-center space-x-3 text-muted-foreground">
-                <Phone className="w-5 h-5 text-primary" />
-                <span>+1 (555) 123-4567</span>
+              <li>
+                <a href="#" className="text-lg md:text-xl underline block mb-2">
+                  changelog
+                </a>
               </li>
-              <li className="flex items-center space-x-3 text-muted-foreground">
-                <MapPin className="w-5 h-5 text-primary" />
-                <span>Los Angeles, CA</span>
-              </li>
-              <li className="flex items-center space-x-3 text-muted-foreground">
-                <Instagram className="w-5 h-5 text-primary" />
-                <span>@filmfluence</span>
+              <li>
+                <a href="#" className="text-lg md:text-xl underline block">
+                  license
+                </a>
               </li>
             </ul>
           </div>
         </div>
+      </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-border mt-12 pt-8 text-center text-muted-foreground">
-          <p>&copy; {currentYear} FilmFluence. All rights reserved. Made with ❤️ for creators and brands.</p>
-        </div>
+      {/* Bottom row */}
+      <div className="max-w-screen-2xl px-12 mx-auto flex flex-col sm:flex-row justify-between items-center text-base sm:text-xl">
+        <p className="mb-2 sm:mb-0">
+          Developed by{" "}
+          <a className="underline-offset-2 underline">Fahad x Aquib</a>
+        </p>
+        <a href="#" className="underline underline-offset-2">
+          back to top
+        </a>
       </div>
     </footer>
   );
