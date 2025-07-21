@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaSortDown, FaSortUp } from "react-icons/fa";
 
 const faqs = [
   {
@@ -45,14 +46,14 @@ export default function FAQSection() {
     setActiveIndex(idx === activeIndex ? null : idx);
 
   return (
-    <section className="bg-[#5c0099] py-16">
+    <section className="bg-[#f72585] py-16">
       {" "}
       {/* py-16 for spacing – adjust as you need */}
       <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row gap-8">
           {/* Left Side */}
           <div className="mr-16 flex flex-col items-start md:w-1/2">
-            <span className="text-white text-7xl font-bold leading-tight uppercase">
+            <span className="text-white sm:text-7xl text-5xl font-bold leading-tight uppercase">
               Have more
               <br />
               questions?
@@ -79,24 +80,31 @@ export default function FAQSection() {
             </span>
           </div>
           {/* Right Side (Accordion) */}
-          <div className="ml-20 md:w-1/2 flex flex-col gap-0.5">
+          <div className="sm:ml-20 m-0 md:w-1/2 flex flex-col gap-2">
             {faqs.map((faq, i) => (
               <div key={faq.question}>
                 <button
-                  className="flex items-center justify-between w-full py-3 px-3 md:px-6 bg-[#5c0099] text-white text-base font-medium border-b border-white/10 focus:outline-none"
+                  className="flex items-center justify-between w-full py-3 px-3 md:px-6 bg-[#f8ff00] rounded-md text-black text-base font-medium border-b border-white/10 focus:outline-none"
                   onClick={() => toggleAccordion(i)}
                   aria-expanded={activeIndex === i}
                   aria-controls={`faq-content-${i}`}
                   id={`faq-header-${i}`}
                   type="button"
                 >
+                  
                   <span className="flex items-center">
-                    <span
-                      className={`text-[#f8ff00] mr-4 text-4xl font-bold select-none transition-transform duration-200 ${
-                        activeIndex === i ? "-rotate-180" : "rotate-0"
-                      }`}
-                    >
-                      &#8595;
+                    <span className="mr-4 flex items-center">
+                      {activeIndex === i ? (
+                        <FaSortUp
+                          size={25}
+                          className="text-black align-middle"
+                        />
+                      ) : (
+                        <FaSortDown
+                          size={25}
+                          className="text-black align-middle"
+                        />
+                      )}
                     </span>
                     {faq.question}
                   </span>
@@ -106,7 +114,7 @@ export default function FAQSection() {
                     id={`faq-content-${i}`}
                     role="region"
                     aria-labelledby={`faq-header-${i}`}
-                    className="py-4 px-6 text-white bg-[#5c0099] border-b border-white/10"
+                    className="py-4 px-6 text-white bg-[#f72585] border-b border-white/10"
                   >
                     {faq.answer}
                   </div>

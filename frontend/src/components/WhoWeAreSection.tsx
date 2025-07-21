@@ -56,7 +56,7 @@ const WhoWeAre = () => {
               </div>
               <img
                 loading="lazy"
-                src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg"
+                // src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg"
                 alt="Mission"
                 className="w-full md:w-52 h-52 object-cover rounded-xl"
               />
@@ -88,7 +88,7 @@ const WhoWeAre = () => {
             >
               <img
               loading="lazy"
-                src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg"
+                // src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg"
                 alt="Vision"
                 className="w-full md:w-52 h-52 object-cover rounded-xl"
               />
