@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import hero3 from "../assets/hero-3.png";
-import scrollVideo from "../assets/ScrollVideo.mp4";
+import scrollVideo from "../assets/ScrollVid.mp4";
 import FloatingHearts from "./ui/FloatingHearts";
 import FFButton from "./ui/FFButton";
 import SocialIcons from "./ui/socialicons";
