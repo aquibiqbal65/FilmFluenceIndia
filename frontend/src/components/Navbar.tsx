@@ -21,8 +21,8 @@ const Navbar = () => {
   const navItems = [
     { name: "WHO WE ARE", path: "/who-we-are" },
     { name: "HOW IT WORKS", path: "/vision" },
-    { name: "PACKAGES", path: "/packages" },
     { name: "FAQs", path: "/mission" },
+    { name: "CAREERS", path: "/careers" },
   ];
 
   const isActive = (path: string) => location.pathname === path;
