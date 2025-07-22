@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaSortDown, FaSortUp } from "react-icons/fa";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const faqs = [
   {
@@ -44,6 +46,9 @@ export default function FAQSection() {
 
   const toggleAccordion = (idx: number) =>
     setActiveIndex(idx === activeIndex ? null : idx);
+  useEffect(() => {
+    Aos.init({ duration: 500, easing: "ease-in-out" });
+  }, []);
 
   return (
     <section className="bg-[#f72585] py-16">
@@ -62,7 +67,7 @@ export default function FAQSection() {
               <br />
               you!
             </span>
-            <span className="mt-4 text-4xl" role="img" aria-label="smiley face">
+            <span className="mt-4 text-4xl" role="img" aria-label="smiley face" data-aos="fade-right">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="100px"
@@ -82,7 +87,7 @@ export default function FAQSection() {
           {/* Right Side (Accordion) */}
           <div className="sm:ml-20 m-0 md:w-1/2 flex flex-col gap-2">
             {faqs.map((faq, i) => (
-              <div key={faq.question}>
+              <div key={faq.question} data-aos="fade-up">
                 <button
                   className="flex items-center justify-between w-full py-3 px-3 md:px-6 bg-[#f8ff00] rounded-md text-black text-base font-medium border-b border-white/10 focus:outline-none"
                   onClick={() => toggleAccordion(i)}
@@ -91,7 +96,6 @@ export default function FAQSection() {
                   id={`faq-header-${i}`}
                   type="button"
                 >
-                  
                   <span className="flex items-center">
                     <span className="mr-4 flex items-center">
                       {activeIndex === i ? (
