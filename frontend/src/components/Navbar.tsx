@@ -72,22 +72,30 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden bg-white border-b border-border/50">
-          <div className="px-4 py-4 space-y-3">
+        <div className="md:hidden bg-black border-t border-border/50 shadow-lg animate-slide-down">
+          <div className="px-6 py-5 flex flex-col space-y-4">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.path}
                 onClick={() => setIsOpen(false)}
-                className={`animated-underline block py-2 font-medium transition-smooth ${
+                className={`animated-underline font-medium text-base py-2 transition-smooth ${
                   isActive(item.path)
                     ? "text-primary active"
-                    : "text-foreground hover:text-primary"
+                    : "text-muted-foreground hover:text-primary"
                 }`}
               >
                 {item.name}
               </Link>
             ))}
+
+            <Link
+              to="/contact"
+              onClick={() => setIsOpen(false)}
+              className="mt-2 w-full text-center bg-primary text-primary-foreground font-[550] rounded-md py-3 uppercase transition-all duration-300 hover:bg-primary/90"
+            >
+              Contact Us
+            </Link>
           </div>
         </div>
       )}
