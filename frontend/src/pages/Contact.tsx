@@ -103,12 +103,14 @@ const Contact: React.FC = () => {
                   {/* Form Embed */}
                   {userType === "brand" ? (
                     <FormfacadeEmbed
-                      formFacadeURL="https://formfacade.com/include/116907795229199129662/form/1FAIpQLSfWlFOhv7qMsZU6ExBCzQ7AQObAWN5lhcsXLLqqOq-HABfkSQ/classic.js/?div=ff-compose"
+                      formFacadeURL="https://formfacade.com/include/116907795229199129662/form/1FAIpQLSf9KzmTaySi2zpQc8ne593Z9vZ2XUJttoW3SsAlRGJt-hGGeA/classic.js/?div=ff-compose"
                       onSubmitForm={() => console.log("Brand form submitted")}
                     />
                   ) : (
+
+                    
                     <FormfacadeEmbed
-                      formFacadeURL="https://formfacade.com/include/116907795229199129662/form/1FAIpQLSeqW0KaWIa-new9h74QygK3H0pzz7_j2W9AP9KSzcQgcZCTWw/classic.js/?div=ff-compose"
+                      formFacadeURL="https://formfacade.com/include/116907795229199129662/form/1FAIpQLSc5KweO6HSARAxrupGzUleR3HQLZHUcB25kPK-Ai_0adsIW1A/classic.js/?div=ff-compose"
                       onSubmitForm={() => console.log("Influencer form submitted")}
                     />
                   )}
