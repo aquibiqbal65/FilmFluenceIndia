@@ -1,11 +1,11 @@
-import React from 'react'
+import Image from "../assets/Testimonials.png";
+import ImageMobile from "../assets/TestimonialsMobile.png";
 
 function TestimonialsSection() {
   return (
     <section
-      className="relative w-full pt-32 pb-44 bg-[#f3f3f3] overflow-x-hidden"
+      className="relative w-full py-20 bg-[#fff] overflow-x-hidden"
       style={{
-        // backgroundImage: `url(${Background})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
@@ -17,9 +17,23 @@ function TestimonialsSection() {
         >
           We don’t gossip but some people have been saying some things...
         </h2>
+        <div>
+          {/* Desktop view */}
+          <img
+            src={Image}
+            alt="testimonials/gossips"
+            className="hidden md:block w-full"
+          />
+          {/* Mobile view */}
+          <img
+            src={ImageMobile}
+            alt="testimonials/gossips"
+            className="block md:hidden w-full"
+          />
         </div>
-        </section>
-  )
+      </div>
+    </section>
+  );
 }
 
-export default TestimonialsSection
+export default TestimonialsSection;
