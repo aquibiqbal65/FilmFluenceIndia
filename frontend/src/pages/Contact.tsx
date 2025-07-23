@@ -6,11 +6,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Mail, Phone, MapPin, Instagram, User, Building } from "lucide-react";
+import Background from "../assets/Backgrounds/contactus.svg";
+import { Mail, Phone, Instagram, User, Building } from "lucide-react";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import FormfacadeEmbed from "@formfacade/embed-react";
 import { Link } from "react-router-dom";
 import Aos from "aos";
 import "aos/dist/aos.css";
@@ -23,17 +22,27 @@ const Contact: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden">
       <Navbar />
-      <div className="pt-20">
+      <div
+        className="pt-20"
+        style={{
+          backgroundImage: `url(${Background})`,
+          backgroundSize: "cover", // fixed invalid 'fit'
+          backgroundPosition: "center",
+        }}
+      >
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           {/* Header */}
-          <div className="text-center mb-16"  data-aos="fade">
+          <div className="text-center mb-16" data-aos="fade">
             <h1 className="text-4xl uppercase md:text-6xl font-bold mb-6">
               <span className="text-foreground">Let's Create </span>
               <span className="text-gradient">Together</span>
             </h1>
-            <p className="text-xl text-white max-w-3xl mx-auto"  data-aos="fade-up">
+            <p
+              className="text-xl text-white max-w-3xl mx-auto"
+              data-aos="fade-up"
+            >
               Ready to transform your brand story? Get in touch with our team of
               creative storytellers and let's bring your vision to life.
             </p>
@@ -41,7 +50,7 @@ const Contact: React.FC = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <div className=""  data-aos="fade-right">
+            <div className="" data-aos="fade-right">
               <Card className="bg-[#f8ff00] border-0">
                 <CardHeader>
                   <CardTitle className="text-black uppercase text-4xl">
@@ -55,7 +64,7 @@ const Contact: React.FC = () => {
                 <CardContent>
                   {/* User Type Selection */}
                   <div>
-                    <label className="text-lg underline underline-offset-2 font-bold text-black mb-3 block">
+                    <label className="text-xl underline underline-offset-2 font-bold text-black mb-3 block">
                       I am a:
                     </label>
                     <div className="flex space-x-4 mb-6 border-black">
@@ -95,24 +104,38 @@ const Contact: React.FC = () => {
 
                   {/* Form Embed */}
                   {userType === "brand" ? (
-                    <FormfacadeEmbed
-                      formFacadeURL="https://formfacade.com/include/116907795229199129662/form/1FAIpQLSf9KzmTaySi2zpQc8ne593Z9vZ2XUJttoW3SsAlRGJt-hGGeA/classic.js/?div=ff-compose"
-                      onSubmitForm={() => console.log("Brand form submitted")}
-                    />
+                    <iframe
+                      src="https://docs.google.com/forms/d/e/1FAIpQLSdm2EV3DOBt3zHndl_SFAiw0hlSX-PuGjK8QH010nw6jVpeMw/viewform?embedded=true"
+                      width="100%"
+                      height="1334"
+                      frameBorder="0"
+                      marginHeight={0}
+                      marginWidth={0}
+                      className="w-full h-[1480px] border-none"
+                      title="Google Form"
+                    >
+                      Loading…
+                    </iframe>
                   ) : (
-                    <FormfacadeEmbed
-                      formFacadeURL="https://formfacade.com/include/116907795229199129662/form/1FAIpQLSc5KweO6HSARAxrupGzUleR3HQLZHUcB25kPK-Ai_0adsIW1A/classic.js/?div=ff-compose"
-                      onSubmitForm={() =>
-                        console.log("Influencer form submitted")
-                      }
-                    />
+                    <iframe
+                      src="https://docs.google.com/forms/d/e/1FAIpQLSdyv-eQR0G70Df8G-FdmB2mzmR6jsZJ75SBAP9RiuVdwXEMpQ/viewform?embedded=true"
+                      width="100%"
+                      height="1334"
+                      frameBorder="0"
+                      marginHeight={0}
+                      marginWidth={0}
+                      className="w-full max-w-3xl h-[1380px] border-none"
+                      title="Google Form"
+                    >
+                      Loading…
+                    </iframe>
                   )}
                 </CardContent>
               </Card>
             </div>
 
             {/* Contact Info Section */}
-            <div className=""  data-aos="fade-left">
+            <div className="" data-aos="fade-left">
               <div className="space-y-8">
                 {/* Contact Info */}
                 <Card className="bg-[#f8ff00] border-0">
@@ -128,7 +151,9 @@ const Contact: React.FC = () => {
                       </div>
                       <div className="text-black">
                         <h3 className="font-semibold">Email</h3>
-                        <p className="">hello@filmfluence.com</p>
+                        <a href="mailto:shoaib@filmfluenceindia.in" className="">
+                          shoaib@filmfluenceindia.in
+                        </a>
                       </div>
                     </div>
 
@@ -138,7 +163,9 @@ const Contact: React.FC = () => {
                       </div>
                       <div className="text-black">
                         <h3 className="font-semibold">Phone</h3>
-                        <p className="">+1 (555) 123-4567</p>
+                        <a href="tel:+916200755320" className="">
+                          +91 6200755320
+                        </a>
                       </div>
                     </div>
 
@@ -149,12 +176,12 @@ const Contact: React.FC = () => {
                       <div className="text-black">
                         <h3 className="font-semibold">Social</h3>
                         <a
-                          href="https://instagram.com/filmfluence"
+                          href="https://instagram.com/filmfluenceindia"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="transition-smooth"
                         >
-                          @filmfluence
+                          @filmfluenceindia
                         </a>
                       </div>
                     </div>
@@ -162,7 +189,7 @@ const Contact: React.FC = () => {
                 </Card>
 
                 {/* Response Time */}
-                <Card className="border-0 bg-[#f8ff00]"  data-aos="fade-left">
+                <Card className="border-0 bg-[#f8ff00]" data-aos="fade-left">
                   <CardContent className="pt-6 text-black">
                     <h3 className="uppercase font-semibold mb-3 text-4xl">
                       Response Time
@@ -176,7 +203,10 @@ const Contact: React.FC = () => {
                 </Card>
 
                 {/* CTA */}
-                <Card className="bg-[#f8ff00] border-0 shadow-elegant"  data-aos="fade-left">
+                <Card
+                  className="bg-[#f8ff00] border-0 shadow-elegant"
+                  data-aos="fade-left"
+                >
                   <CardContent className="pt-6">
                     <h3 className="font-semibold text-black text-4xl uppercase mb-3">
                       Want to be part of the creative engine behind viral
