@@ -5,39 +5,34 @@ import "aos/dist/aos.css";
 
 const faqs = [
   {
-    question: "How do you ensure brand consistency across posts?",
+    question: "I’m an Influencer—how can I collaborate with your agency?",
     answer:
-      "We follow your brand guidelines and feedback closely to match tone, style, and visuals with your branding.",
+      "Fill out our Creator Registration Form present on Contact US page and our team will reach out if there’s a suitable campaign match.",
   },
   {
-    question: "What formats do you deliver the posts in?",
+    question: "I’m a brand—how can I collaborate with creators through your agency?",
     answer:
-      "We offer posts in preferred formats such as JPG, PNG, PDF, or editable design files based on your requirements.",
+      "Simply head over to our Brand Inquiry Form, share your requirements, and we’ll get in touch with a tailored influencer strategy.",
   },
   {
-    question: "Do you offer industry-specific content?",
+    question: " What platforms do you work with?",
     answer:
-      "Yes, our content is tailored to your industry. Our team adapts to your market and audience.",
+      "We currently focus exclusively on Instagram, helping brands connect with the right creators through reels, stories, and posts to drive real engagement and brand awareness",
   },
   {
-    question: "What's the communication process once I purchase a bundle?",
+    question: "What’s the minimum follower count required to collaborate with you?",
     answer:
-      "You’ll be updated at each phase—ideation, drafts, reviews, and delivery—via your preferred communication channels.",
+      "We require influencers to have at least 1,500 genuine Instagram followers to be eligible for collaboration.",
   },
   {
-    question: "What if I'm not happy with my bundle?",
+    question: "How do you select influencers for my brand?",
     answer:
-      "We care about your satisfaction. Revisions are included, and we’ll work closely to meet your expectations.",
+      "We match influencers based on your target audience, campaign goals, engagement rates, niche relevance, and past performance metrics.",
   },
   {
-    question: "How fast will I get my posts?",
+    question: "What industries do you serve?",
     answer:
-      "Turnaround time depends on bundle size, but we typically deliver within 3-7 business days.",
-  },
-  {
-    question: "Can I get editable templates?",
-    answer:
-      "Absolutely. We can provide editable files on request for your future self-service needs.",
+      "We specialize in fashion, beauty, food, fitness, lifestyle, tech, and travel, but are open to working with all sectors.",
   },
 ];
 

@@ -25,16 +25,16 @@ const Footer: React.FC = () => {
               Connect
             </h2>
             <a
-              href="mailto:info@MEJSA.webflow.io"
+              href="mailto:shoaib@filmfluence.in"
               className="underline text-lg md:text-xl block mb-2"
             >
-              info@MEJSA.webflow.io
+              shoaib@filmfluence.in
             </a>
             <a
-              href="tel:+991234567890"
+              href="tel:+916200755320"
               className="text-lg md:text-xl underline"
             >
-              +99 12 3456 7890
+              +91 6200755320
             </a>
           </div>
 
@@ -45,13 +45,8 @@ const Footer: React.FC = () => {
             </h2>
             <ul>
               <li>
-                <a href="#" className="text-lg md:text-xl underline block mb-2">
+                <a href="https://www.instagram.com/filmfluenceindia" target="_blank" className="text-lg md:text-xl underline block mb-2">
                   instagram
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-lg md:text-xl underline block mb-2">
-                  linkedin
                 </a>
               </li>
               <li>
@@ -75,17 +70,17 @@ const Footer: React.FC = () => {
             <ul>
               <li>
                 <a href="#" className="text-lg md:text-xl underline block mb-2">
-                  style guide
+                  Contact Us
                 </a>
               </li>
               <li>
                 <a href="#" className="text-lg md:text-xl underline block mb-2">
-                  changelog
+                  Join Us
                 </a>
               </li>
               <li>
                 <a href="#" className="text-lg md:text-xl underline block">
-                  license
+                  Privacy Policy
                 </a>
               </li>
             </ul>
@@ -94,15 +89,21 @@ const Footer: React.FC = () => {
       </div>
 
       {/* Bottom row */}
-      <div className="max-w-screen-2xl px-12 mx-auto flex flex-col sm:flex-row justify-between items-center text-base sm:text-xl">
-        <p className="mb-2 sm:mb-0">
-          Developed by{" "}
-          <a className="underline-offset-2 underline">Fahad x Aquib</a>
-        </p>
-        <a href="#" className="underline underline-offset-2">
-          back to top
-        </a>
-      </div>
+      <div className="max-w-screen-2xl px-12 mx-auto w-full">
+  <hr className="border-t border-black w-full mb-6" />
+  <div className="flex flex-col sm:flex-row justify-between items-center text-base sm:text-xl">
+    <p className="mb-2 sm:mb-0">
+      Developed by{" "}
+      <a className="underline-offset-2 underline">Fahad x Aquib</a>
+    </p>
+    <button
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      className="underline underline-offset-2"
+    >
+      back to top
+    </button>
+  </div>
+</div>
     </footer>
   );
 };

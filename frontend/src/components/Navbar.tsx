@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Instagram } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { useNavigate, useLocation } from "react-router-dom";
+import { Menu, X } from "lucide-react";
 import Logo from "../assets/Logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false); // 🔥
+  const [scrolled, setScrolled] = useState(false);
+  const navigate = useNavigate();
   const location = useLocation();
 
   useEffect(() => {
@@ -18,14 +18,35 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navItems = [
-    { name: "WHO WE ARE", path: "/who-we-are" },
-    { name: "HOW IT WORKS", path: "/vision" },
-    { name: "FAQs", path: "/mission" },
-    { name: "CAREERS", path: "/careers" },
-  ];
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
-  const isActive = (path: string) => location.pathname === path;
+  const handleNavClick = (target: string, isRoute: boolean = false) => {
+    if (isRoute) {
+      navigate(`/${target}`);
+    } else {
+      if (location.pathname !== "/") {
+        navigate("/");
+
+        // wait for the homepage to mount, then scroll
+        setTimeout(() => scrollToSection(target), 100);
+      } else {
+        scrollToSection(target);
+      }
+    }
+    setIsOpen(false); // close mobile menu if open
+  };
+
+  const navItems = [
+    { name: "WHO WE ARE", target: "who-we-are", route: false },
+    { name: "HOW IT WORKS", target: "how-it-works", route: false },
+    { name: "FAQs", target: "faqs", route: false },
+    { name: "CAREERS", target: "careers", route: true },
+  ];
 
   return (
     <nav
@@ -35,30 +56,27 @@ const Navbar = () => {
     >
       <div className="max-w-screen-2xl my-5 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <Link to="/" className="flex items-center">
+          <a href="/" className="flex items-center">
             <img className="sm:h-11 h-8" src={Logo} alt="Logo" />
-          </Link>
+          </a>
 
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <Link
+              <button
                 key={item.name}
-                to={item.path}
-                className={`animated-underline font-medium transition-smooth ${
-                  isActive(item.path)
-                    ? "text-primary active"
-                    : "text-white hover:text-primary"
-                }`}
+                onClick={() => handleNavClick(item.target, item.route)}
+                className="text-white hover:text-primary font-medium transition-all duration-300"
               >
                 {item.name}
-              </Link>
+              </button>
             ))}
-            <Link
-              to={"/contact"}
+
+            <button
+              onClick={() => handleNavClick("contact", true)}
               className="bg-primary sm:inline-block hidden p-4 text-primary-foreground font-[550] rounded-xs transition-all duration-300 uppercase"
             >
               <span className="animatedButton-underline">Contact Us</span>
-            </Link>
+            </button>
           </div>
 
           <button
@@ -75,27 +93,21 @@ const Navbar = () => {
         <div className="md:hidden bg-black border-t border-border/50 shadow-lg animate-slide-down">
           <div className="px-6 py-5 flex flex-col space-y-4">
             {navItems.map((item) => (
-              <Link
+              <button
                 key={item.name}
-                to={item.path}
-                onClick={() => setIsOpen(false)}
-                className={`animated-underline font-medium text-base py-2 transition-smooth ${
-                  isActive(item.path)
-                    ? "text-primary active"
-                    : "text-muted-foreground hover:text-primary"
-                }`}
+                onClick={() => handleNavClick(item.target, item.route)}
+                className="text-white hover:text-primary font-medium py-2 transition-all duration-300 text-left"
               >
                 {item.name}
-              </Link>
+              </button>
             ))}
 
-            <Link
-              to="/contact"
-              onClick={() => setIsOpen(false)}
+            <button
+              onClick={() => handleNavClick("contact", true)}
               className="mt-2 w-full text-center bg-primary text-primary-foreground font-[550] rounded-md py-3 uppercase transition-all duration-300 hover:bg-primary/90"
             >
               Contact Us
-            </Link>
+            </button>
           </div>
         </div>
       )}
