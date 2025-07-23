@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import Background from "../assets/Backgrounds/whoweare.svg";
+import OurMission from "../assets/OurMission.jpg";
+import OurVision from "../assets/OurVision.jpg";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
@@ -56,9 +58,11 @@ const WhoWeAre = () => {
               </div>
               <img
                 loading="lazy"
-                // src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg"
+                src={OurMission}
                 alt="Mission"
                 className="w-full md:w-52 h-52 object-cover rounded-xl"
+                data-aos="fade"
+              data-aos-duration="1200"
               />
             </div>
           </div>
@@ -88,9 +92,11 @@ const WhoWeAre = () => {
             >
               <img
               loading="lazy"
-                // src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg"
+                src={OurVision}
                 alt="Vision"
                 className="w-full md:w-52 h-52 object-cover rounded-xl"
+                 data-aos="fade"
+              data-aos-duration="1200"
               />
               <div className="flex-1">
                 <p className="text-gray-700 text-lg md:text-xl">
