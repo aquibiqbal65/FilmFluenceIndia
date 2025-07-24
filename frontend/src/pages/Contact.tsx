@@ -6,7 +6,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import Background from "../assets/Backgrounds/contactus.svg";
 import { Mail, Phone, Instagram, User, Building } from "lucide-react";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
@@ -27,7 +26,7 @@ const Contact: React.FC = () => {
       <div
         className="pt-20"
         style={{
-          backgroundImage: `url(${Background})`,
+          backgroundImage: `url(/contactus.svg)`,
           backgroundSize: "cover", // fixed invalid 'fit'
           backgroundPosition: "center",
         }}
