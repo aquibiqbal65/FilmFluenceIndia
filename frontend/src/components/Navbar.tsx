@@ -65,7 +65,7 @@ const Navbar = () => {
               <button
                 key={item.name}
                 onClick={() => handleNavClick(item.target, item.route)}
-                className="text-white hover:text-primary font-medium transition-all duration-300"
+                className="animated-underline text-white hover:text-primary font-medium transition-all duration-300"
               >
                 {item.name}
               </button>
