@@ -2,7 +2,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Background from "../assets/Backgrounds/contactus.svg";
 import {
   Card,
   CardContent,
@@ -19,8 +18,8 @@ const Careers = () => {
       <div
         className="pt-20"
         style={{
-          backgroundImage: `url(${Background})`,
-          backgroundSize: "fit",
+          backgroundImage: `url(/contactus.svg)`,
+          backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
