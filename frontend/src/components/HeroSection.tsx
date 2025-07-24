@@ -1,6 +1,6 @@
+import { useEffect, useState } from "react";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
-import { Star } from "lucide-react";
 import { FaYoutube, FaInstagram, FaHeart, FaComment } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { TypeAnimation } from "react-type-animation";
@@ -9,12 +9,15 @@ import "aos/dist/aos.css";
 import hero3 from "../assets/hero-3.png";
 import scrollVideo from "../assets/ScrollVid.mp4";
 import FloatingHearts from "./ui/FloatingHearts";
-import { useEffect } from "react";
+
 const HeroSection = () => {
+  const [videoLoaded, setVideoLoaded] = useState(false);
+
   const { ref: commentsRef, inView: commentsInView } = useInView({
     triggerOnce: false,
     threshold: 0.6,
   });
+
   const { ref: likesRef, inView: likesInView } = useInView({
     triggerOnce: false,
     threshold: 0.6,
@@ -41,76 +44,53 @@ const HeroSection = () => {
           <div className="flex flex-col lg:flex-row items-center lg:items-start gap-2 lg:gap-12">
             {/* Text Section */}
             <div className="w-full lg:w-2/3 xl:w-3/4">
-              <div className="">
-                <h1 className="mb-6" data-aos="fade-right">
-                  <span className="text-foreground text-4xl font-bold uppercase sm:text-5xl lg:text-4xl xl:text-8xl">
-                    {title}
-                  </span>
-                  <br />
-                  <TypeAnimation
-                    sequence={[
-                      "Partnerships",
-                      3000,
-                      "Engagements",
-                      3000,
-                      "Authenticity",
-                      3000,
-                      "& more...",
-                      3000,
-                    ]}
-                    className="text-black bg-foreground p-4 text-4xl font-bold uppercase sm:text-5xl lg:text-4xl xl:text-8xl"
-                    wrapper="span"
-                    speed={50}
-                    style={{ display: "inline-block" }}
-                    repeat={Infinity}
-                  />
-                </h1>
+              <h1 className="mb-6" data-aos="fade-right">
+                <span className="text-foreground text-4xl font-bold uppercase sm:text-5xl lg:text-4xl xl:text-8xl">
+                  {title}
+                </span>
+                <br />
+                <TypeAnimation
+                  sequence={[
+                    "Partnerships",
+                    3000,
+                    "Engagements",
+                    3000,
+                    "Authenticity",
+                    3000,
+                    "& more...",
+                    3000,
+                  ]}
+                  className="text-black bg-foreground p-4 text-4xl font-bold uppercase sm:text-5xl lg:text-4xl xl:text-8xl"
+                  wrapper="span"
+                  speed={50}
+                  style={{ display: "inline-block" }}
+                  repeat={Infinity}
+                />
+              </h1>
 
-                <p
-                  className="text-white text-lg sm:text-xl lg:text-2xl text-muted-foreground mb-8 max-w-2xl"
-                  data-aos="fade-up"
-                  data-aos-duration="700"
-                >
-                  {subtitle}
-                </p>
-                <div
-                  className="flex flex-col sm:flex-row gap-4 sm:gap-6 pt-12 items-start sm:items-center"
-                  data-aos="fade-up"
-                  data-aos-duration="900"
-                >
-                  <div className="flex-shrink-0">
-                    <Link to="/contact">
-                      <button className="learn-more space-x-4">
-                        <span className="circle" aria-hidden="true">
-                          <span className="icon arrow"></span>
-                        </span>
-                        <span className="button-text tracking-widest">
-                          Start Campaign
-                        </span>
-                      </button>
-                    </Link>
-                  </div>
-                </div>
+              <p
+                className="text-white text-lg sm:text-xl lg:text-2xl text-muted-foreground mb-8 max-w-2xl"
+                data-aos="fade-up"
+                data-aos-duration="700"
+              >
+                {subtitle}
+              </p>
 
-                {/* Stats */}
-                {/* <div
-                  className="mt-8 lg:mt-12 flex flex-wrap items-center gap-4 lg:gap-8"
-                  data-aos="fade-up"
-                  data-aos-duration="1100"
-                >
-                  <div className="flex items-center space-x-2">
-                    <Star className="w-5 h-5 text-accent fill-current" />
-                    <span className="text-white text-sm text-muted-foreground">
-                      0.1 Rating
+              <div
+                className="flex flex-col sm:flex-row gap-4 sm:gap-6 pt-12 items-start sm:items-center"
+                data-aos="fade-up"
+                data-aos-duration="900"
+              >
+                <Link to="/contact">
+                  <button className="learn-more space-x-4">
+                    <span className="circle" aria-hidden="true">
+                      <span className="icon arrow"></span>
                     </span>
-                  </div>
-                  <div className="text-white text-sm text-muted-foreground">
-                    500+ Successful Campaigns
-                  </div>
-                  <div className="text-white text-sm text-muted-foreground">
-                    1M+ Reach Generated
-                  </div>
-                </div> */}
+                    <span className="button-text tracking-widest">
+                      Start Campaign
+                    </span>
+                  </button>
+                </Link>
               </div>
             </div>
 
@@ -155,11 +135,9 @@ const HeroSection = () => {
                 <div
                   ref={likesRef}
                   className="absolute -right-12 bottom-16 z-20"
+                  data-aos="fade-right"
                 >
-                  <div
-                    className="bg-indigo-500 rounded-full px-3 py-1 text-white font-medium text-sm flex items-center gap-1 shadow"
-                    data-aos="fade-right"
-                  >
+                  <div className="bg-indigo-500 rounded-full px-3 py-1 text-white font-medium text-sm flex items-center gap-1 shadow">
                     <FaHeart className="w-4 h-4" />
                     {likesInView && (
                       <CountUp end={4578} duration={2.5} separator="," />
@@ -175,7 +153,14 @@ const HeroSection = () => {
                       <p className="absolute right-6 top-2.5 h-1 w-1 rounded-full bg-yellow-600"></p>
                     </div>
 
-                    {/* Video + FloatingHearts */}
+                    {/* 👇 Loader Spinner While Video Loads */}
+                    {!videoLoaded && (
+                      <div className="absolute inset-0 z-40 flex items-center justify-center bg-black bg-opacity-70">
+                        <div className="w-10 h-10 border-4 border-t-transparent border-white rounded-full animate-spin"></div>
+                      </div>
+                    )}
+
+                    {/* 👇 Video + Floating Hearts */}
                     <div className="w-full h-full flex items-center justify-center relative">
                       <video
                         className="w-full h-full object-cover rounded-[2.5rem]"
@@ -184,15 +169,18 @@ const HeroSection = () => {
                         loop
                         playsInline
                         poster={hero3}
+                        onLoadedData={() => setVideoLoaded(true)}
                       >
                         <source src={scrollVideo} type="video/mp4" />
                       </video>
                     </div>
                   </div>
+
                   {/* Floating Hearts */}
                   <div className="absolute left-4 inset-0 z-50">
                     <FloatingHearts />
                   </div>
+
                   {/* Home Bar */}
                   <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-white rounded-full"></div>
                 </div>
