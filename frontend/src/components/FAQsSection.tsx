@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { FaSortDown, FaSortUp } from "react-icons/fa";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import { FaCaretDown, FaCaretUp } from "react-icons/fa";
 
 const faqs = [
   {
@@ -94,12 +95,12 @@ export default function FAQSection() {
                   <span className="flex items-center">
                     <span className="mr-4 flex items-center">
                       {activeIndex === i ? (
-                        <FaSortUp
+                        <FaCaretUp
                           size={25}
                           className="text-black align-middle"
                         />
                       ) : (
-                        <FaSortDown
+                        <FaCaretDown
                           size={25}
                           className="text-black align-middle"
                         />
