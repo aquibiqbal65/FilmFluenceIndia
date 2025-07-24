@@ -1,5 +1,5 @@
 import { CheckCircle, Search, VideoIcon, TrendingUp } from "lucide-react";
-import Background from "/assets/Backgrounds/howitworks.svg";
+import Background from "../../public/assets/Backgrounds/howitworks.svg";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
