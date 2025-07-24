@@ -93,7 +93,7 @@ const HeroSection = () => {
                 </div>
 
                 {/* Stats */}
-                <div
+                {/* <div
                   className="mt-8 lg:mt-12 flex flex-wrap items-center gap-4 lg:gap-8"
                   data-aos="fade-up"
                   data-aos-duration="1100"
@@ -101,7 +101,7 @@ const HeroSection = () => {
                   <div className="flex items-center space-x-2">
                     <Star className="w-5 h-5 text-accent fill-current" />
                     <span className="text-white text-sm text-muted-foreground">
-                      5.0 Rating
+                      0.1 Rating
                     </span>
                   </div>
                   <div className="text-white text-sm text-muted-foreground">
@@ -110,12 +110,12 @@ const HeroSection = () => {
                   <div className="text-white text-sm text-muted-foreground">
                     1M+ Reach Generated
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
 
             {/* iPhone Mockup */}
-            <div className="w-full lg:w-1/3 xl:w-1/4 flex justify-center lg:justify-end">
+            <div className="w-full lg:w-1/3 xl:w-1/4 flex justify-center sm:pt-0 pt-8 lg:justify-end">
               <div className="relative">
                 {/* Social Icons */}
                 <div className="absolute -left-10 top-10 flex flex-col items-center space-y-4 z-20">
