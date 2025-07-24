@@ -1,19 +1,32 @@
-import React, { useEffect, useState } from "react";
-import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import { useEffect, useState } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { FaCaretDown, FaCaretUp } from "react-icons/fa";
 
 const faqs = [
   {
-    question: "I’m an Influencer—how can I collaborate with your agency?",
-    answer:
-      "Fill out our Creator Registration Form present on Contact US page and our team will reach out if there’s a suitable campaign match.",
+    question: "I'm an Influencer—how can I collaborate with your agency?",
+    answer: (
+      <>
+        Fill out our{" "}
+        <a href="/contact" className="underline hover:text-yellow-300">
+          Creator Registration Form
+        </a>{" "}
+         and our team will reach out if there's a suitable campaign match.
+      </>
+    ),
   },
   {
-    question: "I’m a brand—how can I collaborate with creators through your agency?",
-    answer:
-      "Simply head over to our Brand Inquiry Form, share your requirements, and we’ll get in touch with a tailored influencer strategy.",
+    question: "I'm a brand—how can I collaborate with creators through your agency?",
+    answer: (
+      <>
+        Simply head over to our{" "}
+        <a href="/contact" className="underline hover:text-yellow-300">
+          Brand Inquiry Form
+        </a>
+        , share your requirements, and we'll get in touch with a tailored influencer strategy.
+      </>
+    ),
   },
   {
     question: " What platforms do you work with?",
@@ -21,7 +34,7 @@ const faqs = [
       "We currently focus exclusively on Instagram, helping brands connect with the right creators through reels, stories, and posts to drive real engagement and brand awareness",
   },
   {
-    question: "What’s the minimum follower count required to collaborate with you?",
+    question: "What's the minimum follower count required to collaborate with you?",
     answer:
       "We require influencers to have at least 1,500 genuine Instagram followers to be eligible for collaboration.",
   },
@@ -36,6 +49,7 @@ const faqs = [
       "We specialize in fashion, beauty, food, fitness, lifestyle, tech, and travel, but are open to working with all sectors.",
   },
 ];
+
 
 export default function FAQSection() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
