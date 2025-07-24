@@ -25,10 +25,10 @@ const Footer: React.FC = () => {
               Connect
             </h2>
             <a
-              href="mailto:shoaib@filmfluence.in"
+              href="mailto:shoaib@filmfluenceindia.in"
               className="underline text-lg md:text-xl block mb-2"
             >
-              shoaib@filmfluence.in
+              shoaib@filmfluenceindia.in
             </a>
             <a
               href="tel:+916200755320"
@@ -50,15 +50,15 @@ const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="text-lg md:text-xl underline block mb-2">
+                <a href="" className="text-lg md:text-xl underline block mb-2">
                   facebook
                 </a>
               </li>
-              <li>
-                <a href="#" className="text-lg md:text-xl underline block">
+              {/* <li>
+                <a href="" className="text-lg md:text-xl underline block">
                   X
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
 
@@ -69,20 +69,20 @@ const Footer: React.FC = () => {
             </h2>
             <ul>
               <li>
-                <a href="#" className="text-lg md:text-xl underline block mb-2">
+                <Link to={'/contact'} className="text-lg md:text-xl underline block mb-2">
                   Contact Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-lg md:text-xl underline block mb-2">
+                <Link to={'/careers'} className="text-lg md:text-xl underline block mb-2">
                   Join Us
-                </a>
+                </Link>
               </li>
-              <li>
+              {/* <li>
                 <a href="#" className="text-lg md:text-xl underline block">
                   Privacy Policy
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
