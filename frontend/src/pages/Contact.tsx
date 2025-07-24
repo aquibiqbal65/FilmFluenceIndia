@@ -53,10 +53,10 @@ const Contact: React.FC = () => {
             <div className="" data-aos="fade-right">
               <Card className="bg-[#f8ff00] border-0">
                 <CardHeader>
-                  <CardTitle className="text-black uppercase text-4xl">
+                  <CardTitle className="text-black sm:text-left text-center uppercase text-4xl">
                     Get Started
                   </CardTitle>
-                  <CardDescription className="text-black  text-2xl">
+                  <CardDescription className="text-black sm:text-left text-center  sm:text-2xl text-xl">
                     Fill out the form below and we'll get back to you within 24
                     hours.
                   </CardDescription>
@@ -67,7 +67,7 @@ const Contact: React.FC = () => {
                     <label className="text-xl underline underline-offset-2 font-bold text-black mb-3 block">
                       I am a:
                     </label>
-                    <div className="flex space-x-4 mb-6 border-black">
+                    <div className="flex space-x-1 mb-6 border-black">
                       {/* Brand Button */}
                       <button
                         type="button"
@@ -79,7 +79,7 @@ const Contact: React.FC = () => {
                         }`}
                       >
                         <Building className="w-5 h-5 mx-auto mb-1 text-black" />
-                        <span className="sm:text-xl text-md text-black uppercase">
+                        <span className="sm:text-xl text-sm text-black uppercase">
                           Brand/Company
                         </span>
                       </button>
@@ -95,7 +95,7 @@ const Contact: React.FC = () => {
                         }`}
                       >
                         <User className="w-5 h-5 mx-auto mb-1 text-black" />
-                        <span className="sm:text-xl text-md text-black uppercase">
+                        <span className="sm:text-xl text-sm text-black uppercase">
                           Influencer/Creator
                         </span>
                       </button>
