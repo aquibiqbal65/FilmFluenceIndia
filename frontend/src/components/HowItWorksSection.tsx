@@ -56,7 +56,7 @@ const HowItWorksSection = () => {
   return (
     <section
       style={{
-        backgroundImage: `url(/assets/Backgrounds/howitworks.svg)`,
+        backgroundImage: `url(/howitworks.svg)`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
