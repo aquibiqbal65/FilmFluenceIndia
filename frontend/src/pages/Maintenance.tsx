@@ -34,14 +34,14 @@ const Maintenance = () => {
       {/* Optional socials */}
       <div className="mt-6 flex gap-4 text-gray-400">
         <a
-          href="https://instagram.com/yourhandle"
+          href="https://instagram.com/filmfluenceindia"
           className="hover:text-pink-500 transition"
           target="_blank"
         >
           Instagram
         </a>
         <a
-          href="mailto:contact@filmfluenceindia.in"
+          href="mailto:shoaib@filmfluenceindia.in"
           className="hover:text-yellow-400 transition"
         >
           Email Us
