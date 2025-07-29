@@ -7,8 +7,15 @@ import TestimonialsSection from "../components/TestimonialsSection";
 import Footer from "../components/Footer";
 import SocialIcons from "@/components/ui/socialicons";
 import FAQSection from "../components/FAQsSection";
+import Maintenance from "./Maintenance";
 
 const Index = () => {
+  const isMaintenance = true; // ⬅️ Set to false to disable maintenance mode
+
+  if (isMaintenance) {
+    return <Maintenance />;
+  }
+
   return (
     <div className="min-h-screen bg-background scroll-smooth">
       <Navbar />
