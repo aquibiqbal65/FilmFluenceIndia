@@ -10,7 +10,7 @@ import FAQSection from "../components/FAQsSection";
 import Maintenance from "./Maintenance";
 
 const Index = () => {
-  const isMaintenance = true; // ⬅️ Set to false to disable maintenance mode
+  const isMaintenance = false; // ⬅️ Set to false to disable maintenance mode
 
   if (isMaintenance) {
     return <Maintenance />;
